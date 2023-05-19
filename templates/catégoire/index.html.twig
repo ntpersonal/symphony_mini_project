@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégoire index{% endblock %}
+
+{% block body %}
+    <h1>Catégoire index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Désingnation</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cat_goire in cat_goires %}
+            <tr>
+                <td>{{ cat_goire.id }}</td>
+                <td>{{ cat_goire.désingnation }}</td>
+                <td>
+                    <a href="{{ path('app_cat_goire_show', {'id': cat_goire.id}) }}">show</a>
+                    <a href="{{ path('app_cat_goire_edit', {'id': cat_goire.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_cat_goire_new') }}">Create new</a>
+{% endblock %}
