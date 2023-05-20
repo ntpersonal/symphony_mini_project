@@ -36,7 +36,6 @@ final class PeintureFactory extends ModelFactory
      */
     public function __construct()
     {
-        parent::__construct();
     }
 
     /**

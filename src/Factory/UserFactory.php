@@ -27,14 +27,8 @@ use Zenstruck\Foundry\RepositoryProxy;
  * @method static User[]|Proxy[] randomRange(int $min, int $max, array $attributes = [])
  * @method static User[]|Proxy[] randomSet(int $number, array $attributes = [])
  */
-final class UserFactory extends ModelFactory
-{
-    /**
-     * @see https://symfony.com/bundles/ZenstruckFoundryBundle/current/index.html#factories-as-services
-     *
-     * @todo inject services if required
-     */
-    public function __construct()
+final class UserFactory extends ModelFactory // add the parent class here
+{   public function __construct()
     {
         parent::__construct();
     }

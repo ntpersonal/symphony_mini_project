@@ -32,7 +32,6 @@ final class CatégoireFactory extends ModelFactory
 {
     public function __construct()
     {
-        parent::__construct();
     }
 
     protected function getDefaults(): array
@@ -61,7 +60,7 @@ final class CatégoireFactory extends ModelFactory
     {
         return parent::createMany($count, $attributes + [
             'désignation' => self::faker()->text(20),
-            'listePeintures' => PeintureFactory::new()->createMany(3),
+            'listePeintures' => PeintureFactory::randomOrCreate(),
         ]);
     }
 }

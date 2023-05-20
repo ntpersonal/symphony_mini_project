@@ -36,7 +36,6 @@ final class CommentaireFactory extends ModelFactory
      */
     public function __construct()
     {
-        parent::__construct();
     }
 
     /**

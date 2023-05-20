@@ -25,28 +25,28 @@ class FixtureLoaderService
     public function loadFixtures(): void
     {
         // Create users
-        $users = UserFactory::createMany(10);
+        $users = UserFactory::createMany(3);
         foreach ($users as $user) {
             $this->entityManager->persist($user instanceof Proxy ? $user->__subject() : $user);
         }
 
         // Create other entities
-        $people = PersonneFactory::createMany(10);
+        $people = PersonneFactory::createMany(3);
         foreach ($people as $person) {
             $this->entityManager->persist($person instanceof Proxy ?$person->__subject():$person);
         }
 
-        $comments = CommentaireFactory::createMany(10);
+        $comments = CommentaireFactory::createMany(3);
         foreach ($comments as $comment) {
             $this->entityManager->persist($comment instanceof Proxy ?$comment->__subject():$comment);
         }
 
-        $paintings = PeintureFactory::createMany(10);
+        $paintings = PeintureFactory::createMany(3);
         foreach ($paintings as $painting) {
             $this->entityManager->persist($painting instanceof Proxy ?$painting->__proxySubject():$painting);
         }
 
-        $categories = CatégoireFactory::createMany(10);
+        $categories = CatégoireFactory::createMany(3);
         foreach ($categories as $category) {
             $this->entityManager->persist($category instanceof Proxy ?$category->__subject():$category);
         }
